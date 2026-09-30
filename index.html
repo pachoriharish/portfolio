@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Harish Pachori — Web Developer</title>
+<meta name="description" content="Harish Pachori, web developer from Delhi. HTML, CSS, JavaScript, PHP and MySQL.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#e6eadb;--panel:#d8dfc8;--ink:#1c2a1a;--soft:#4f5f4a;--moss:#2f5233;--fern:#6f9445;--bark:#7b5a3c;--rule:#b9c4a5;
+--serif:'Fraunces',Georgia,'Times New Roman',serif;--sans:'Public Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#131b12;--panel:#1d281b;--ink:#e3ead6;--soft:#a2b195;--moss:#9cc47a;--fern:#86b05a;--bark:#c9a27a;--rule:#2f3d2b}}
+:root[data-theme="dark"]{--paper:#131b12;--panel:#1d281b;--ink:#e3ead6;--soft:#a2b195;--moss:#9cc47a;--fern:#86b05a;--bark:#c9a27a;--rule:#2f3d2b}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.7 var(--serif);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--fern);outline-offset:3px}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:var(--fern);z-index:50}
+#fx{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.55}
+.shell{position:relative;z-index:1;display:grid;grid-template-columns:230px minmax(0,1fr);max-width:1180px;margin:0 auto;padding:0 28px}
+.rail{position:sticky;top:0;align-self:start;height:100vh;padding:36px 24px 36px 0;border-right:1px solid var(--rule);display:flex;flex-direction:column;gap:26px;font-family:var(--sans);font-size:.92rem}
+.who{font:600 1.15rem/1.2 var(--serif)}
+.who small{display:block;margin-top:6px;font:400 .85rem/1.4 var(--sans);color:var(--soft)}
+.rail nav{display:flex;flex-direction:column;gap:10px}
+.rail nav a{text-decoration:none;color:var(--soft);padding-left:12px;border-left:2px solid transparent;transition:.2s}
+.rail nav a:hover,.rail nav a.on{color:var(--ink);border-left-color:var(--fern);padding-left:18px}
+.foot{margin-top:auto;display:grid;gap:12px;color:var(--soft);font-size:.85rem}
+.foot b{color:var(--moss)}
+#theme{justify-self:start;background:none;border:1.5px solid var(--rule);border-radius:99px;padding:6px 14px;font:500 .85rem var(--sans)}
+#theme:hover{border-color:var(--fern)}
+main{padding:36px 0 80px 56px;max-width:840px;min-width:0}
+section{padding:80px 0 8px}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+h1{font:300 clamp(3.4rem,10vw,7.8rem)/.88 var(--serif);letter-spacing:-.035em;margin:9vh 0 26px;font-variation-settings:"opsz" 144;animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+h1 em{font-style:italic;color:var(--moss)}
+h2{font:600 clamp(1.7rem,3.6vw,2.4rem)/1.1 var(--serif);letter-spacing:-.015em;margin:0 0 28px;padding-top:14px;border-top:3px solid var(--moss)}
+.type{font:italic 300 clamp(1.3rem,2.8vw,1.85rem)/1.4 var(--serif);margin:0 0 18px;min-height:1.5em}
+.type i{display:inline-block;width:2px;height:1em;background:var(--fern);vertical-align:-.12em;margin-left:3px;animation:blink 1s steps(2) infinite}
+.dek{font-family:var(--sans);color:var(--soft);font-size:.98rem;max-width:34em;margin:0 0 30px}
+.btns{display:flex;flex-wrap:wrap;gap:14px;font:500 .95rem var(--sans)}
+.btn{display:inline-block;padding:12px 22px;border:1.5px solid var(--moss);border-radius:2px;text-decoration:none;background:none;transition:.2s}
+.btn.fill{background:var(--moss);color:var(--paper)}
+.btn:hover{background:var(--fern);border-color:var(--fern);color:var(--paper);transform:translateY(-2px)}
+.about{display:grid;grid-template-columns:minmax(0,250px) 1fr;gap:36px;align-items:start}
+.photo{position:relative;transform:rotate(-2.5deg);transition:transform .4s}
+.photo:hover{transform:rotate(0) scale(1.02)}
+.photo img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border:8px solid var(--panel);box-shadow:0 14px 30px -14px #0006}
+.photo span{display:block;margin-top:10px;font:italic 300 .95rem var(--serif);color:var(--soft);text-align:center}
+.about p{margin:0 0 1.05em}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px;font:500 .85rem var(--sans)}
+.facts span{background:var(--panel);padding:6px 14px;border-radius:99px}
+.row{display:grid;grid-template-columns:130px 1fr;gap:6px 30px;padding:22px 0;border-bottom:1px solid var(--rule)}
+.row:first-of-type{padding-top:0}
+.when{font:500 .88rem/1.8 var(--sans);color:var(--bark)}
+.row h3{font:600 1.25rem/1.25 var(--serif);margin:0 0 2px}
+.where{font:500 .92rem var(--sans);color:var(--soft);margin:0 0 6px}
+.row p:last-child{margin:0}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;font-family:var(--sans)}
+.tabs button{background:none;border:1.5px solid var(--rule);border-radius:99px;padding:8px 18px;font-weight:500;font-size:.9rem;transition:.2s}
+.tabs button:hover{border-color:var(--fern)}
+.tabs button[aria-selected=true]{background:var(--moss);border-color:var(--moss);color:var(--paper)}
+#pane{min-height:150px}
+#pane p{margin:0 0 18px;max-width:34em;font-style:italic;font-weight:300;font-size:1.15rem;color:var(--soft)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;font-family:var(--sans)}
+.chips span{padding:8px 16px;background:var(--panel);border-left:3px solid var(--fern);font-size:.92rem;animation:pop .4s both;transition:.2s}
+.chips span:hover{transform:translateY(-3px);border-left-color:var(--bark)}
+.proj{display:block;position:relative;text-decoration:none;padding:28px 0;border-bottom:1px solid var(--rule)}
+.proj h3{font:300 clamp(1.9rem,4.4vw,3rem)/1.05 var(--serif);letter-spacing:-.02em;margin:0 0 10px;transition:.25s}
+.proj:hover h3{color:var(--moss);padding-left:14px}
+.proj p{margin:0 0 12px;max-width:34em}
+.meta{display:flex;flex-wrap:wrap;gap:6px 18px;font:500 .88rem var(--sans);color:var(--soft)}
+.meta a{color:var(--bark);font-weight:600}
+.soon{margin-top:28px;padding:26px;border:2px dashed var(--rule);text-align:center;font:italic 300 1.2rem var(--serif);color:var(--soft)}
+.links{margin:0 0 26px;padding:0;list-style:none;font:500 1.1rem var(--sans);display:grid;gap:10px}
+.links span{display:inline-block;width:80px;color:var(--soft);font-weight:400}
+footer{margin-top:70px;padding-top:20px;border-top:1px solid var(--rule);font:400 .88rem var(--sans);color:var(--soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes blink{50%{opacity:0}}
+@keyframes pop{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+@media (max-width:860px){
+.shell{grid-template-columns:1fr;padding:0 20px}
+.rail{position:static;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:20px 0;border-right:0;border-bottom:1px solid var(--rule)}
+.rail nav{flex-direction:row;flex-wrap:wrap;gap:6px 16px;width:100%;order:3}
+.rail nav a,.rail nav a:hover,.rail nav a.on{padding:0;border:0}.foot .st{display:none}
+main{padding:0 0 60px}h1{margin-top:6vh}
+.about{grid-template-columns:1fr}.photo{max-width:240px}
+.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="bar"></div><canvas id="fx" aria-hidden="true"></canvas>
+<div class="shell">
+<aside class="rail">
+  <div class="who">Harish Pachori<small>Web Developer · Delhi</small></div>
+  <nav aria-label="Sections">
+    <a href="#top">Intro</a><a href="#about">About</a><a href="#education">Education</a>
+    <a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+  </nav>
+  <div class="foot"><span class="st"><b>Open to work</b> as a Web Developer.</span><button id="theme" type="button" aria-label="Toggle theme">Switch theme</button></div>
+</aside>
+
+<main>
+<section id="top" style="padding-top:0">
+  <h1>Harish<br><em>Pachori.</em></h1>
+  <p class="type" aria-live="off"><span id="t"></span><i></i></p>
+  <p class="dek">A fresher web developer building responsive, clean websites with HTML, CSS, JavaScript, PHP and MySQL.</p>
+  <div class="btns">
+    <a class="btn fill" href="#projects">See my projects</a>
+    <a class="btn" href="Harish_Pachori_Resume.pdf" download>Download resume</a>
+    <a class="btn" href="#contact">Get in touch</a>
+  </div>
+</section>
+
+<section id="about" class="rv">
+  <h2>About</h2>
+  <div class="about">
+    <figure class="photo" style="margin:0"><img src="photo.jpg" alt="Portrait of Harish Pachori" width="360" height="360"><span>Harish, Delhi</span></figure>
+    <div>
+      <p>I'm Harish, a detail-oriented fresher with a solid base in web development. I build responsive pages, write clean and structured code, and I'm comfortable with MVC-based frameworks.</p>
+      <p>On the back end I work with PHP and MySQL, and I know data structures through Python. I learn quickly, communicate clearly, and I'm looking for a Web Developer role where I can grow alongside experienced developers and contribute to real projects.</p>
+      <div class="facts"><span>English</span><span>Hindi</span><span>Quick learner</span><span>Team player</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="rv">
+  <h2>Education</h2>
+  <div class="row"><div class="when">2026</div><div><h3>B.A. (Programme)</h3><p class="where">University of Delhi, School of Open Learning · Completed</p></div></div>
+  <div class="row"><div class="when">2026</div><div><h3>Master Diploma in Computer Engineering (MDCE)</h3><p class="where">Indian Institute of Computer Science (IICS), Nangloi, Delhi · Completed</p><p>Certification covering web design, PHP, MVC frameworks, databases, Python and data structures.</p></div></div>
+  <div class="row"><div class="when">2023</div><div><h3>Senior Secondary (12th)</h3><p class="where">CBSE Board · Completed</p></div></div>
+  <div class="row"><div class="when">2021</div><div><h3>Secondary (10th)</h3><p class="where">CBSE Board · Completed</p></div></div>
+</section>
+
+<section id="skills" class="rv">
+  <h2>Skills</h2>
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <div id="pane" role="tabpanel"></div>
+</section>
+
+<section id="projects" class="rv">
+  <h2>Projects</h2>
+  <div class="proj"><h3>Spill The Tea</h3><p>A meme gallery with category filters, login, uploads, likes and dislikes, user profiles, light and dark themes, and a responsive layout. Every page is rendered by PHP with plain forms.</p><div class="meta"><span>HTML · CSS · JavaScript · PHP · MySQL</span><a href="https://spillthetea.infinityfree.io/" target="_blank" rel="noopener">Live demo</a><a href="https://github.com/pachoriharish/Spill-The-Tea" target="_blank" rel="noopener">Source</a></div></div>
+  <div class="proj"><h3>Rock, Paper, Scissors</h3><p>A console game in Python where you play the computer, which picks at random. Uses input handling, dictionaries and conditional logic.</p><div class="meta"><span>Python</span><a href="https://github.com/pachoriharish/rock-paper-and-scissor-game" target="_blank" rel="noopener">Source</a></div></div>
+  <div class="proj"><h3>This portfolio</h3><p>A responsive, interactive personal site with animated intro, tabbed skills, light and dark themes and a downloadable resume.</p><div class="meta"><span>HTML · CSS · JavaScript</span><a href="https://github.com/pachoriharish" target="_blank" rel="noopener">GitHub</a></div></div>
+  <div class="soon">The next project is on its way.</div>
+</section>
+
+<section id="contact" class="rv">
+  <h2>Contact</h2>
+  <ul class="links">
+    <li><span>Email</span><a href="mailto:pachoriharish7@gmail.com">pachoriharish7@gmail.com</a></li>
+    <li><span>GitHub</span><a href="https://github.com/pachoriharish" target="_blank" rel="noopener">github.com/pachoriharish</a></li>
+  </ul>
+  <div class="btns"><button class="btn fill" id="copy" type="button">Copy email</button></div>
+  <footer><span>© 2026 Harish Pachori</span><a href="#top">Back to top</a></footer>
+</section>
+</main>
+</div>
+<script>
+const $=s=>document.querySelector(s),rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+// typing
+const ph=['Web Developer.','PHP & MySQL builder.','Responsive layouts, cleanly coded.','Python problem solver.'];let pi=0,ci=0,del=0;
+(function tick(){const w=ph[pi],el=$('#t');if(rm){el.textContent=ph[0];return}
+el.textContent=w.slice(0,ci);if(!del&&ci===w.length){del=1;return setTimeout(tick,1600)}
+if(del&&ci===0){del=0;pi=(pi+1)%ph.length}ci+=del?-1:1;setTimeout(tick,del?35:70)})();
+// skills
+const S={'Front end':['Explore the tools I use to build pages people enjoy on any screen.','HTML','CSS','CSS frameworks','JavaScript','Responsive web design','Web publishing'],
+'Back end':['Server-side logic and the structure behind an application.','PHP','MVC framework basics','CakePHP','Web services','Dynamic forms'],
+'Databases':['Designing and querying data that stays organised.','MySQL','Database design','Data manipulation','NoSQL overview'],
+'Programming':['Problem solving with clear, readable code.','Python','Data structures with Python','C++ and OOP','Algorithms','Searching and sorting','Stacks, queues, trees, graphs'],
+'Foundations':['The habits and tools around the code.','Linux basics','Shell scripting','Systems analysis and design','Software testing','Debugging','Clean, readable code']};
+const tabs=$('#tabs'),pane=$('#pane');
+function show(k){[...tabs.children].forEach(b=>b.setAttribute('aria-selected',b.dataset.k===k));const[d,...c]=S[k];
+pane.innerHTML='<p>'+d+'</p><div class="chips">'+c.map((x,i)=>'<span style="animation-delay:'+i*45+'ms">'+x+'</span>').join('')+'</div>'}
+Object.keys(S).forEach(k=>{const b=document.createElement('button');b.type='button';b.role='tab';b.textContent=k;b.dataset.k=k;b.onclick=()=>show(k);tabs.append(b)});show('Front end');
+// reveal + nav + progress
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.08});
+document.querySelectorAll('.rv').forEach(s=>io.observe(s));
+const links=[...document.querySelectorAll('.rail nav a')];
+const io2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(l=>l.classList.toggle('on',l.hash==='#'+e.target.id))}),{rootMargin:'-40% 0px -55% 0px'});
+document.querySelectorAll('main section').forEach(s=>io2.observe(s));
+addEventListener('scroll',()=>{const h=document.documentElement;$('#bar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+// theme
+$('#theme').onclick=()=>{const r=document.documentElement,d=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;r.dataset.theme=d?'light':'dark'};
+// copy email
+$('#copy').onclick=async e=>{try{await navigator.clipboard.writeText('pachoriharish7@gmail.com');e.target.textContent='Copied!'}catch(_){location.href='mailto:pachoriharish7@gmail.com'}setTimeout(()=>e.target.textContent='Copy email',1800)};
+// drifting specks
+if(!rm){const c=$('#fx'),x=c.getContext('2d');let W,H,P=[];const rs=()=>{W=c.width=innerWidth;H=c.height=innerHeight;P=Array.from({length:Math.min(46,W/28|0)},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*2.2+.6,vx:(Math.random()-.5)*.25,vy:-Math.random()*.35-.08}))};rs();addEventListener('resize',rs);
+let mx=-999,my=-999;addEventListener('pointermove',e=>{mx=e.clientX;my=e.clientY});
+(function f(){x.clearRect(0,0,W,H);const col=getComputedStyle(document.documentElement).getPropertyValue('--fern');P.forEach(p=>{const dx=p.x-mx,dy=p.y-my,d=Math.hypot(dx,dy);if(d<110){p.x+=dx/d*1.2;p.y+=dy/d*1.2}p.x+=p.vx;p.y+=p.vy;if(p.y<-5){p.y=H+5;p.x=Math.random()*W}if(p.x<-5)p.x=W+5;if(p.x>W+5)p.x=-5;x.beginPath();x.arc(p.x,p.y,p.r,0,7);x.fillStyle=col;x.fill()});requestAnimationFrame(f)})()}
+</script>
+</body>
+</html>
