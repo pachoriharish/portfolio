@@ -10,7 +10,7 @@
 
 **A responsive, interactive personal portfolio with an editorial look and an earthy green palette.**
 
-[🌐 Live site](https://YOUR-DOMAIN-HERE) &nbsp;•&nbsp; [✉️ Email](mailto:pachoriharish7@gmail.com) &nbsp;•&nbsp; [🐙 GitHub](https://github.com/pachoriharish) &nbsp;•&nbsp; [📄 Resume](Harish_Pachori_Resume.pdf)
+[🌐 Live site](https://harishpachori.free.nf/) &nbsp;•&nbsp; [✉️ Email](mailto:pachoriharish7@gmail.com) &nbsp;•&nbsp; [🐙 GitHub](https://github.com/pachoriharish) &nbsp;•&nbsp; [📄 Resume](Harish_Pachori_Resume.pdf)
 
 </div>
 
